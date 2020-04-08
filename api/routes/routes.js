@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function(app) {
   var controller = require('../controllers/controller');
 
@@ -7,6 +8,10 @@ module.exports = function(app) {
     .get(controller.list_all_employees)
     .post(controller.create_an_employee);
 
+  app.route('/greeting')
+    .get(controller.greeting);
+  
+  console.log('routes executed');
 
   // app.route('/employees/:employeeId')
   //   .get(controller.read_an_employee)
